@@ -1,6 +1,6 @@
 {
   "name": "fisarmonica",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A simple vanilla js accordion plugin",
   "main": "src/fisarmonica.js",
   "scripts": {
