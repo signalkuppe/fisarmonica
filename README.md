@@ -1,5 +1,7 @@
 # fisarmonica
-A simple vanilla js accordion plugin
+> A simple vanilla js accordion plugin
+
+[DEMO](https://fisarmonica.netlify.com/)
 
 
 ## Installation
