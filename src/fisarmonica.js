@@ -123,7 +123,9 @@ var Fisarmonica = function (options) { // eslint-disable-line no-unused-vars, pa
           if (arrayOfItems) {
             if (arrayOfItems.includes(idb)) {
               button.setAttribute('aria-expanded', true)
-              button.focus()
+              if (arrayOfItems.length === 1) { // focus only if we have to open 1 panel
+                button.focus()
+              }
             }
           } else { // open all
             button.setAttribute('aria-expanded', true)

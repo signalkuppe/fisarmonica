@@ -104,6 +104,48 @@ Default value:
 }
 ```
 
-You can ovveride any prop you like. Css style are set with custom-properties so check the browsers support
+You can **ovveride any prop** you like. Css style are set with custom-properties so [check browser support](https://caniuse.com/#feat=css-variables)
 
 
+## Methods
+
+### open
+
+```js
+// pass a zero-index array of panels to open ([1,2] => opens 2nd and 3rd panel)
+// if no argument is passed all the panels will open
+
+var fisarmonica = new Fisarmonica()
+fisarmonica.open([1,2])
+```
+
+### close
+
+```js
+// pass a zero-index array of panels to close ([1,2] => closes 2nd and 3rd panel)
+// if no argument is passed all the panels will open
+
+var fisarmonica = new Fisarmonica()
+fisarmonica.close([1,2])
+```
+
+
+### disable
+
+```js
+// pass a zero-index array of panels to disable ([1,2] => disables 2nd and 3rd panel)
+// if no argument is passed all the panels will be disabled
+
+var fisarmonica = new Fisarmonica()
+fisarmonica.disable([1,2])
+```
+
+### enable
+
+```js
+// pass a zero-index array of panels to enable ([1,2] => enables 2nd and 3rd panel)
+// if no argument is passed all the panels will be enabled
+
+var fisarmonica = new Fisarmonica()
+fisarmonica.enable([1,2])
+```
