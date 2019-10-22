@@ -1,5 +1,5 @@
 # fisarmonica
-A simple vanilla js fisarmonica plugin
+A simple vanilla js accordion plugin
 
 
 ## Installation
@@ -63,33 +63,33 @@ Default value:
 ```js
 {
   /* spacing */
-  fisarmonicaOuterBorderWidth: 3px,
-  fisarmonicaInnerBorderWidth: 1px,
-  fisarmonicaBorderRadius: 5px,
-  fisarmonicaArrowWidth: 3px,
-  fisarmonicaPadding: 1em,
+  fisarmonicaOuterBorderWidth: '3px',
+  fisarmonicaInnerBorderWidth: '1px',
+  fisarmonicaBorderRadius: '5px',
+  fisarmonicaArrowWidth: '3px',
+  fisarmonicaPadding: '1em',
 
   /* Colors */
-  fisarmonicaBorderColor: Gray,
-  fisarmonicaBorderColorFocus: SteelBlue,
-  fisarmonicaInnerBorderColorFocus: Gray,
+  fisarmonicaBorderColor: 'Gray',
+  fisarmonicaBorderColorFocus: 'SteelBlue',
+  fisarmonicaInnerBorderColorFocus: 'Gray',
 
   /* Arrow Colors */
-  fisarmonicaArrowColor: Gray,
-  fisarmonicaArrowColorFocus: SteelBlue,
-  fisarmonicaArrowColorDisabled: Gray,
+  fisarmonicaArrowColor: 'Gray',
+  fisarmonicaArrowColorFocus: 'SteelBlue',
+  fisarmonicaArrowColorDisabled: 'Gray',
 
   /* Button Colors */
-  fisarmonicaButtonColor: black,
-  fisarmonicaButtonColorFocus: black,
-  fisarmonicaButtonColorDisabled: Grey,
-  fisarmonicaButtonBackground: white,
-  fisarmonicaButtonBackgroundFocus: AliceBlue,
-  fisarmonicaButtondBackgroundDisabled: WhiteSmoke,
+  fisarmonicaButtonColor: 'black',
+  fisarmonicaButtonColorFocus: 'black',
+  fisarmonicaButtonColorDisabled: 'Grey',
+  fisarmonicaButtonBackground: 'white',
+  fisarmonicaButtonBackgroundFocus: 'AliceBlue',
+  fisarmonicaButtondBackgroundDisabled: 'WhiteSmoke',
 
   /* Seection Colors */
-  fisarmonicaSectionColor: black,
-  fisarmonicaSectionBackground: white
+  fisarmonicaSectionColor: 'black',
+  fisarmonicaSectionBackground: 'white'
 }
 ```
 
