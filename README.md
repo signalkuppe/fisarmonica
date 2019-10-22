@@ -6,7 +6,7 @@
 
 ## Installation
 
-Install via npm
+**NPM**
 
 ```shell
 npm install fisarmonica --save
@@ -15,8 +15,17 @@ npm install fisarmonica --save
 Include css and js files
 
 ```html
-<link rel="stylesheet" href="<path-to-lib>/fisarmonica.css" />
-<script src="./src/fisarmonica.js" ></script>
+<link rel="stylesheet" media="screen" href="<path-to-lib>/fisarmonica.css" />
+<script src="<path-to-lib>/fisarmonica.js" ></script>
+```
+
+**CDN**
+
+Be sure to use the latest version
+
+```html
+<link rel="stylesheet" media="screen" href="https://cdn.jsdelivr.net/npm/fisarmonica@1.0.2/dist/fisarmonica.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/fisarmonica@1.0.2/dist/fisarmonica.min.js" ></script>
 ```
 
 Prepare the base markup

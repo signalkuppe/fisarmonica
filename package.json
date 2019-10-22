@@ -5,7 +5,8 @@
   "main": "src/fisarmonica.js",
   "scripts": {
     "bundle": "node bundle",
-    "dev": "http-server ./"
+    "dev": "http-server ./",
+    "publish": "npx np --yolo"
   },
   "repository": {
     "type": "git",
