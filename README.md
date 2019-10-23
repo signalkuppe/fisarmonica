@@ -1,8 +1,7 @@
-# fisarmonica
+# Fisarmonica
 > A simple and accessible vanilla js accordion plugin (<1kb minifed and gzipped)
 
 [DEMO](https://fisarmonica.netlify.com/)
-
 
 ## Installation
 
@@ -149,3 +148,17 @@ fisarmonica.disable([1,2])
 var fisarmonica = new Fisarmonica()
 fisarmonica.enable([1,2])
 ```
+
+## Keyboard events
+
+* `Enter` or `Space` = Expands/Collapses Panel
+* `Tab` = Move to next focusable element
+* `Shift + Tab` = Move to previous focusable element
+* `↑ ↓` = Cycle elements when focused
+* `Home` = Focus first element
+* `End` = Focus last element
+
+
+fisarmonica means accordion in italian 😉
+
+[https://it.wikipedia.org/wiki/Fisarmonica](https://it.wikipedia.org/wiki/Fisarmonica)
