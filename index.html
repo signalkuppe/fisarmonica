@@ -1,6 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="">
-
+<html>
 <head>
   <meta charset="utf-8">
   <title>Fisarmonica | Demo</title>
@@ -17,7 +16,7 @@
       font-family: 'Roboto', sans-serif;
       font-size: 125%;
       padding: 4vw;
-      max-width: 1200px;
+      max-width: 1000px;
     }
 
     h1 {
@@ -30,6 +29,18 @@
 
     code {
       font-size: 75%!important;
+    }
+
+    label {
+      font-weight: 700;
+      font-size: 85%;
+      display: block;
+      margin-bottom: 0.25em;
+    }
+
+    img {
+      max-width: 70%;
+      display: block;
     }
   </style>
 </head>
@@ -57,13 +68,25 @@
     </dt>
     <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</dd>
     <dt>
-      <button>Accordion Title 2</button>
+      <button>Accordion Title 2 with images</button>
     </dt>
-    <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</dd>
+    <dd>
+      <h3>Descending the Tossenhorn ridge</h3>
+      <a href="https://www.signalkuppe.com/alpinismo/2019/10/07/tossenhorn" target="_blank" rel="noopener">
+        <img src="https://images.ctfassets.net/rotmy72mdop6/0tEAUAJwe3obUm5L1KuEb/30af751ebecfacfbd78788cb74a2999f/alpinismo-tossenhorn-rientro-colle.jpg?fit=thumb&w=1200&fm=jpg&fl=progressive" alt="Tossenhorn ridge" />
+      </a>
+      <p><small>Great view on the Weissmies massif</small></p>
+    </dd>
     <dt>
-      <button>Accordion Title 3</button>
+      <button>Accordion Title 3 with inputs</button>
     </dt>
-    <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</dd>
+    <dd>
+      <form action="/">
+        <label for="demo-input-1">Demo input</label>
+        <input type="text" placeholder="Type something..." id="demo-input-1" />
+        <button type="submit">Submit</button>
+      </form>
+    </dd>
   </dl>
 
 <pre>

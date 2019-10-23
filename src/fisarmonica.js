@@ -25,6 +25,8 @@ var Fisarmonica = function (options) { // eslint-disable-line no-unused-vars, pa
   /* root element */
 
   var accordionRootElement = document.querySelector(mergedOptions.selector)
+  var buttons
+  var panels
 
   //
   // public API
@@ -95,29 +97,27 @@ var Fisarmonica = function (options) { // eslint-disable-line no-unused-vars, pa
    */
 
   var _setStatus = function (arrayOfItems, action) {
-    Array
-      .from(accordionRootElement.querySelectorAll('dd'))
-      .forEach(function (content, idc) {
+    panels
+      .forEach(function (panel, idc) {
         if (action === 'open') {
           if (arrayOfItems) {
             if (arrayOfItems.includes(idc)) {
-              content.classList.remove(selectors.contentHiddenClass)
+              panel.classList.remove(selectors.contentHiddenClass)
             }
           } else { // open all
-            content.classList.remove(selectors.contentHiddenClass)
+            panel.classList.remove(selectors.contentHiddenClass)
           }
         } else if (action === 'close') {
           if (arrayOfItems) {
             if (arrayOfItems.includes(idc)) {
-              content.classList.add(selectors.contentHiddenClass)
+              panel.classList.add(selectors.contentHiddenClass)
             }
           } else { // close all
-            content.classList.add(selectors.contentHiddenClass)
+            panel.classList.add(selectors.contentHiddenClass)
           }
         }
       })
-    Array
-      .from(accordionRootElement.querySelectorAll('button'))
+    buttons
       .forEach(function (button, idb) {
         if (action === 'open') {
           if (arrayOfItems) {
@@ -178,17 +178,15 @@ var Fisarmonica = function (options) { // eslint-disable-line no-unused-vars, pa
     accordionRootElement.classList.add('fisarmonica') // for styling purpose
     var accordionId = _makeId()
     var accordionId2 = _makeId()
-    Array
-      .from(accordionRootElement.querySelectorAll('button'))
+    buttons
       .forEach(function (button, idb) {
-        button.setAttribute('aria-controls', 'fisarmonica-content-' + accordionId + '-' + idb)
-        button.setAttribute('id', 'fisarmonica-content-' + accordionId2 + '-' + idb)
+        button.setAttribute('aria-controls', 'fisarmonica-panel-' + accordionId + '-' + idb)
+        button.setAttribute('id', 'fisarmonica-panel-' + accordionId2 + '-' + idb)
       })
-    Array
-      .from(accordionRootElement.querySelectorAll('dd'))
-      .forEach(function (content, idc) {
-        content.setAttribute('id', 'fisarmonica-content-' + accordionId + '-' + idc)
-        content.setAttribute('aria-labelledby', 'fisarmonica-content-' + accordionId2 + '-' + idc)
+    panels
+      .forEach(function (panel, idc) {
+        panel.setAttribute('id', 'fisarmonica-panel-' + accordionId + '-' + idc)
+        panel.setAttribute('aria-labelledby', 'fisarmonica-panel-' + accordionId2 + '-' + idc)
       })
   }
 
@@ -197,8 +195,7 @@ var Fisarmonica = function (options) { // eslint-disable-line no-unused-vars, pa
    */
 
   var _setFocusWatcher = function () {
-    Array
-      .from(accordionRootElement.querySelectorAll('button'))
+    buttons
       .forEach(function (button) {
         button.addEventListener('focus', function () {
           accordionRootElement.classList.add(selectors.accordionFocusClass)
@@ -213,25 +210,53 @@ var Fisarmonica = function (options) { // eslint-disable-line no-unused-vars, pa
    * Root element click handler
    */
 
-  var _clickHandler = function (e) {
+  var _rootClickHandler = function (e) {
     if (e.target.matches('button')) {
-      var buttons = accordionRootElement.querySelectorAll('button')
-      var clickedIndex = Array.from(buttons).indexOf(e.target)
-      if (!mergedOptions.keepPanelsOpen) {
-        var others = Array.apply(null, Array(buttons.length)).map(function (_, i) { return i })
-          .filter(function (i) {
-            return i !== clickedIndex
-          })
-        fisarmonica.close(others)
-      }
-      if (e.target.getAttribute('aria-expanded') === 'false') {
-        fisarmonica.open([clickedIndex])
-      } else {
-        fisarmonica.close([clickedIndex])
-      }
+      _buttonClickHandler(e.target)
       accordionRootElement.classList.add(selectors.accordionFocusClass)
       e.preventDefault()
     }
+  }
+
+  var _buttonClickHandler = function (buttonClicked) {
+    var clickedIndex = Array.from(buttons).indexOf(buttonClicked)
+    if (!mergedOptions.keepPanelsOpen) {
+      var others = Array.apply(null, Array(buttons.length))
+        .map(function (_, i) { return i })
+        .filter(function (i) {
+          return i !== clickedIndex
+        })
+      fisarmonica.close(others)
+    }
+    if (buttonClicked.getAttribute('aria-expanded') === 'false') {
+      fisarmonica.open([clickedIndex])
+    } else {
+      fisarmonica.close([clickedIndex])
+    }
+  }
+
+  var _keyboardEvents = function () {
+    accordionRootElement.addEventListener('keydown', function (e) {
+      var key = event.which.toString()
+      var target = event.target
+      var index = buttons.indexOf(target)
+      if (index !== -1) { // do all the logic only if we are acting on a trigger element
+        if (key === '40' || key === '38' || key === '36' || key === '35') { // moving up and down
+          if (key === '40' || key === '38') { // down and up
+            index = key === '40' ? (index + 1 === buttons.length ? 0 : index + 1) : (index - 1 === -1 ? buttons.length - 1 : index - 1) // check if we are at the end or at the beginning
+          } else if (key === '36') { // home
+            index = 0
+          } else if (key === '35') { // end
+            index = buttons.length - 1
+          }
+          buttons[index].focus()
+          e.preventDefault()
+        } else if (key === '32' || key === '13') { // enter or space
+          _buttonClickHandler(buttons[index])
+          e.preventDefault()
+        }
+      }
+    })
   }
 
   /**
@@ -243,11 +268,14 @@ var Fisarmonica = function (options) { // eslint-disable-line no-unused-vars, pa
       console.warn('Cannot find an fisarmonica with class' + mergedOptions.selector)
       return
     }
+    buttons = Array.from(accordionRootElement.querySelectorAll('dt > button'))
+    panels = Array.from(accordionRootElement.querySelectorAll('dd'))
     fisarmonica.close()
     _prepareMarkup()
     _changeStyles()
     _setFocusWatcher()
-    accordionRootElement.addEventListener('click', _clickHandler, false)
+    _keyboardEvents()
+    accordionRootElement.addEventListener('click', _rootClickHandler, false)
   }
 
   _init()

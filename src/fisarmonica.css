@@ -1,5 +1,4 @@
 .fisarmonica {
-
   /* Accordion css variables */
 
   /* spacing */
@@ -38,7 +37,7 @@
 
 /* Button titles */
 
-.fisarmonica button {
+.fisarmonica > dt > button {
   font-family: inherit;
   font-size: inherit;
   color: var(--fisarmonicaButtonColor);
@@ -53,20 +52,20 @@
 
 /* Disabled titles */
 
-.fisarmonica button[disabled] {
+.fisarmonica > dt > button[disabled] {
   color: var(--fisarmonicaButtonColorDisabled);
   background: var(--fisarmonicaButtondBackgroundDisabled);
 }
 
 /* Disabled titles hover state */
 
-.fisarmonica button[disabled]:hover {
+.fisarmonica > dt > button[disabled]:hover {
   cursor: not-allowed;
 }
 
 /* Arrow */
 
-.fisarmonica button::after {
+.fisarmonica > dt > button::after {
   content: '';
   display: block;
   border: solid var(--fisarmonicaArrowColor);
@@ -78,31 +77,31 @@
 
 /* Global padding */
 
-.fisarmonica button,
-.fisarmonica dd {
+.fisarmonica > dt > button,
+.fisarmonica > dd {
   padding: var(--fisarmonicaPadding);
 }
 
 /* Internal border */
 
-.fisarmonica dd + dt {
+.fisarmonica > dd + dt {
   border-top-style: solid;
   border-color: var(--fisarmonicaBorderColor);
   border-top-width: var(--fisarmonicaInnerBorderWidth);
 }
 
-.fisarmonica button[aria-expanded="true"] {
+.fisarmonica > dt > button[aria-expanded="true"] {
   border-bottom-style: solid;
   border-bottom-width: var(--fisarmonicaInnerBorderWidth);
 }
 
-.fisarmonica button[aria-expanded="true"]:focus {
+.fisarmonica > dt > button[aria-expanded="true"]:focus {
   border-color: var(--fisarmonicaInnerBorderColorFocus);
 }
 
 /* Seections */
 
-.fisarmonica dd {
+.fisarmonica > dd {
   color: var(--fisarmonicaSectionColor);
   background: var(--fisarmonicaSectionBackground);
   margin: 0;
@@ -118,11 +117,11 @@
   border-color: var(--fisarmonicaBorderColorFocus);
 }
 
-.fisarmonica.js-focus dd + dt {
+.fisarmonica.js-focus > dd + dt {
   border-color: var(--fisarmonicaInnerBorderColorFocus);
 }
 
-.fisarmonica dd.js-is-hidden {
+.fisarmonica > dd.js-is-hidden {
   transform: scaleY(0);
   height: 0;
   padding: 0;
@@ -130,19 +129,19 @@
   overflow: hidden;
 }
 
-.fisarmonica button:focus {
+.fisarmonica > dt > button:focus {
   color: var(--fisarmonicaButtonColorFocus);
   background: var(--fisarmonicaButtonBackgroundFocus);
 }
 
-.fisarmonica button:focus::after {
+.fisarmonica > dt > button:focus::after {
   border-color: var(--fisarmonicaArrowColorFocus);
 }
 
-.fisarmonica button[disabled]::after {
+.fisarmonica > dt > button[disabled]::after {
   border-color: var(--fisarmonicaArrowColorDisabled);
 }
 
-.fisarmonica button[aria-expanded="true"]::after {
+.fisarmonica > dt > button[aria-expanded="true"]::after {
   transform: translate(-0.25em, 0.15em) rotate(-135deg);
 }
