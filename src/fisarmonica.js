@@ -251,7 +251,7 @@ var Fisarmonica = function (options) { // eslint-disable-line no-unused-vars, pa
           }
           buttons[index].focus()
           e.preventDefault()
-        } else if (key === '32' || key === '13') { // enter or space
+        } else if (key === '13') { // enter
           _buttonClickHandler(buttons[index])
           e.preventDefault()
         }
