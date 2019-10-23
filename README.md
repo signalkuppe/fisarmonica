@@ -122,7 +122,7 @@ fisarmonica.open([1,2])
 
 ```js
 // pass a zero-index array of panels to close ([1,2] => closes 2nd and 3rd panel)
-// if no argument is passed all the panels will open
+// if no argument is passed all the panels will close
 
 var fisarmonica = new Fisarmonica()
 fisarmonica.close([1,2])
