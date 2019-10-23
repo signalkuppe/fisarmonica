@@ -24,8 +24,8 @@ Include css and js files
 Be sure to use the latest version
 
 ```html
-<link rel="stylesheet" media="screen" href="https://cdn.jsdelivr.net/npm/fisarmonica@1.0.9/dist/fisarmonica.min.css" />
-<script src="https://cdn.jsdelivr.net/npm/fisarmonica@1.0.9/dist/fisarmonica.min.js" ></script>
+<link rel="stylesheet" media="screen" href="https://cdn.jsdelivr.net/npm/fisarmonica@1.1.1/dist/fisarmonica.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/fisarmonica@1.1.1/dist/fisarmonica.min.js" ></script>
 ```
 
 Prepare the base markup
