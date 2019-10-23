@@ -44,7 +44,7 @@ var Fisarmonica = function (options) { // eslint-disable-line no-unused-vars, pa
 
   /**
    * Closes a list of panels
-   * @param {Array} arrayOfPanelsToClose to 0-index array containing the panels to close 
+   * @param {Array} arrayOfPanelsToClose to 0-index array containing the panels to close
    * If no arrayOfPanelsToClose is specified, all panels will be closed
    */
 
@@ -54,7 +54,7 @@ var Fisarmonica = function (options) { // eslint-disable-line no-unused-vars, pa
 
   /**
    * Disables a list of panels
-   * @param {Array} arrayOfPanelsToDisable to 0-index array containing the panels to disable 
+   * @param {Array} arrayOfPanelsToDisable to 0-index array containing the panels to disable
    * If no arrayOfPanelsToDisable is specified, all panels will be disabled
    */
 
@@ -64,7 +64,7 @@ var Fisarmonica = function (options) { // eslint-disable-line no-unused-vars, pa
 
   /**
    * Enables a list of panels
-   * @param {Array} arrayOfPanelsToEnable to 0-index array containing the panels to enable 
+   * @param {Array} arrayOfPanelsToEnable to 0-index array containing the panels to enable
    * If no arrayOfPanelsToEnable is specified, all panels will be enabled
    */
 
