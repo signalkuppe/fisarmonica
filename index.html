@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="./src/fisarmonica.css" />
   <script src="./src/fisarmonica.js" ></script>
   <!-- demo styles -->
-  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Roboto', sans-serif;
@@ -21,19 +21,27 @@
     }
 
     h1 {
-      margin-bottom: 2em;
+      margin-bottom: 0;
+    }
+
+    header {
+      margin-bottom: 4em;
     }
 
     code {
-      font-size: 80%!important;
+      font-size: 75%!important;
     }
   </style>
 </head>
 
 <body>
-  <a href="https://github.com/signalkuppe/fisarmonica">https://github.com/signalkuppe/fisarmonica</a>
-  <h1>Fisarmonica.js demo</h1>
+  
+  <header>
+    <h1>Fisarmonica.js demo</h1>
+    <a href="https://github.com/signalkuppe/fisarmonica">https://github.com/signalkuppe/fisarmonica</a>
+  </header>
 
+  <main>
   <h2>Basic example with API</h2>
   <button id="close">Close all</button>
   <button id="close-2">Close 2</button>
@@ -155,6 +163,7 @@ var fisarmonica3 = new Fisarmonica({
 })
 </code>
 </pre>
+  </main>
   <!-- demo scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/prism.min.js"></script>
   <script>

@@ -104,7 +104,7 @@ Default value:
 }
 ```
 
-You can **ovveride any prop** you like. Css style are set with custom-properties so [check browser support](https://caniuse.com/#feat=css-variables)
+You can **ovveride any prop** you like. Css styles are set with custom-properties so [check browser support](https://caniuse.com/#feat=css-variables)
 
 
 ## Methods
