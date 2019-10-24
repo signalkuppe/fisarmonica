@@ -220,7 +220,6 @@ var Fisarmonica = function (options) { // eslint-disable-line no-unused-vars, pa
    */
 
   var _rootClickHandler = function (e) {
-    console.log(e.target.parentElement)
     if (e.target.matches('button')) {
       _buttonClickHandler(e.target)
       accordionRootElement.classList.add(classes.accordionFocusClass)
