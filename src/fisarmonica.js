@@ -15,9 +15,10 @@ var Fisarmonica = function (options) { // eslint-disable-line no-unused-vars, pa
 
   var mergedOptions = Object.assign(defaults, options)
 
-  /* Plugin added selectors */
+  /* Plugin added classes */
 
-  var selectors = {
+  var classes = {
+    cssMainClass: 'fisarmonica',
     contentHiddenClass: 'js-is-hidden',
     accordionFocusClass: 'js-focus'
   }
@@ -25,6 +26,7 @@ var Fisarmonica = function (options) { // eslint-disable-line no-unused-vars, pa
   /* root element */
 
   var accordionRootElement = document.querySelector(mergedOptions.selector)
+  var titles
   var buttons
   var panels
 
@@ -102,18 +104,18 @@ var Fisarmonica = function (options) { // eslint-disable-line no-unused-vars, pa
         if (action === 'open') {
           if (arrayOfItems) {
             if (arrayOfItems.includes(idc)) {
-              panel.classList.remove(selectors.contentHiddenClass)
+              panel.classList.remove(classes.contentHiddenClass)
             }
           } else { // open all
-            panel.classList.remove(selectors.contentHiddenClass)
+            panel.classList.remove(classes.contentHiddenClass)
           }
         } else if (action === 'close') {
           if (arrayOfItems) {
             if (arrayOfItems.includes(idc)) {
-              panel.classList.add(selectors.contentHiddenClass)
+              panel.classList.add(classes.contentHiddenClass)
             }
           } else { // close all
-            panel.classList.add(selectors.contentHiddenClass)
+            panel.classList.add(classes.contentHiddenClass)
           }
         }
       })
@@ -175,16 +177,23 @@ var Fisarmonica = function (options) { // eslint-disable-line no-unused-vars, pa
    */
 
   var _prepareMarkup = function () {
-    accordionRootElement.classList.add('fisarmonica') // for styling purpose
+    accordionRootElement.classList.add(classes.cssMainClass) // for styling purpose
     var accordionId = _makeId()
     var accordionId2 = _makeId()
+    titles
+      .forEach(function (title) {
+        title.classList.add(classes.cssMainClass + '-title')
+      })
     buttons
       .forEach(function (button, idb) {
+        button.classList.add(classes.cssMainClass + '-button')
+        button.innerHTML = '<span class="' + classes.cssMainClass + '-button-text">' + button.innerHTML + '</span><span aria-hidden="true" class="' + classes.cssMainClass + '-button-icon"></span>'
         button.setAttribute('aria-controls', 'fisarmonica-panel-' + accordionId + '-' + idb)
         button.setAttribute('id', 'fisarmonica-panel-' + accordionId2 + '-' + idb)
       })
     panels
       .forEach(function (panel, idc) {
+        panel.classList.add(classes.cssMainClass + '-panel')
         panel.setAttribute('id', 'fisarmonica-panel-' + accordionId + '-' + idc)
         panel.setAttribute('aria-labelledby', 'fisarmonica-panel-' + accordionId2 + '-' + idc)
       })
@@ -198,10 +207,10 @@ var Fisarmonica = function (options) { // eslint-disable-line no-unused-vars, pa
     buttons
       .forEach(function (button) {
         button.addEventListener('focus', function () {
-          accordionRootElement.classList.add(selectors.accordionFocusClass)
+          accordionRootElement.classList.add(classes.accordionFocusClass)
         })
         button.addEventListener('blur', function () {
-          accordionRootElement.classList.remove(selectors.accordionFocusClass)
+          accordionRootElement.classList.remove(classes.accordionFocusClass)
         })
       })
   }
@@ -211,9 +220,10 @@ var Fisarmonica = function (options) { // eslint-disable-line no-unused-vars, pa
    */
 
   var _rootClickHandler = function (e) {
+    console.log(e.target.parentElement)
     if (e.target.matches('button')) {
       _buttonClickHandler(e.target)
-      accordionRootElement.classList.add(selectors.accordionFocusClass)
+      accordionRootElement.classList.add(classes.accordionFocusClass)
       e.preventDefault()
     }
   }
@@ -268,6 +278,7 @@ var Fisarmonica = function (options) { // eslint-disable-line no-unused-vars, pa
       console.warn('Cannot find an fisarmonica with class' + mergedOptions.selector)
       return
     }
+    titles = Array.from(accordionRootElement.querySelectorAll('dt'))
     buttons = Array.from(accordionRootElement.querySelectorAll('dt > button'))
     panels = Array.from(accordionRootElement.querySelectorAll('dd'))
     fisarmonica.close()

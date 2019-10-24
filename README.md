@@ -23,8 +23,8 @@ Include css and js files
 Be sure to use the latest version
 
 ```html
-<link rel="stylesheet" media="screen" href="https://cdn.jsdelivr.net/npm/fisarmonica@1.2.1/dist/fisarmonica.min.css" />
-<script src="https://cdn.jsdelivr.net/npm/fisarmonica@1.2.1/dist/fisarmonica.min.js" ></script>
+<link rel="stylesheet" media="screen" href="https://cdn.jsdelivr.net/npm/fisarmonica@1.3.0/dist/fisarmonica.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/fisarmonica@1.3.0/dist/fisarmonica.min.js" ></script>
 ```
 
 Prepare the base markup
@@ -72,24 +72,26 @@ Default value:
 
 ```js
 {
-  /* spacing */
+  /* Root element */
   fisarmonicaOuterBorderWidth: '3px',
   fisarmonicaInnerBorderWidth: '1px',
   fisarmonicaBorderRadius: '5px',
-  fisarmonicaArrowWidth: '3px',
   fisarmonicaPadding: '1em',
-
-  /* Colors */
   fisarmonicaBorderColor: 'Gray',
   fisarmonicaBorderColorFocus: 'SteelBlue',
   fisarmonicaInnerBorderColorFocus: 'Gray',
 
-  /* Arrow Colors */
+  /* Arrows */
+  fisarmonicaArrowWidth: '0.75em',
+  fisarmonicaArrowThickness: '3px',
   fisarmonicaArrowColor: 'Gray',
   fisarmonicaArrowColorFocus: 'SteelBlue',
   fisarmonicaArrowColorDisabled: 'Gray',
 
-  /* Button Colors */
+  /* Buttons */
+  fisarmonicaButtonFontFamily: 'inherit',
+  fisarmonicaButtonFontSize: 'inherit',
+  fisarmonicaButtonFontWeight: 'inherit',
   fisarmonicaButtonColor: 'black',
   fisarmonicaButtonColorFocus: 'black',
   fisarmonicaButtonColorDisabled: 'Grey',
@@ -97,13 +99,20 @@ Default value:
   fisarmonicaButtonBackgroundFocus: 'AliceBlue',
   fisarmonicaButtondBackgroundDisabled: 'WhiteSmoke',
 
-  /* Seection Colors */
-  fisarmonicaSectionColor: 'black',
-  fisarmonicaSectionBackground: 'white'
+  /* Panels */
+  fisarmonicaPanelFontFamily: 'inherit',
+  fisarmonicaPanelFontSize: 'inherit',
+  fisarmonicaPanelFontWeight: 'inherit',
+  fisarmonicaPanelColor: 'black',
+  fisarmonicaPanelBackground: 'white'
 }
 ```
 
 You can **ovveride any prop** you like. Css styles are set with custom-properties so [check browser support](https://caniuse.com/#feat=css-variables)
+
+You can also pass your own custom properties as values, to match your site settings
+
+`fisarmonicaButtonBackgroundFocus: 'var(--myCustomVar)'`
 
 
 ## Methods

@@ -12,9 +12,14 @@
   <!-- demo styles -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700&display=swap" rel="stylesheet">
   <style>
+
+    :root {
+      --demoColor: orangered; 
+    }
+
     body {
       font-family: 'Roboto', sans-serif;
-      font-size: 125%;
+      font-size: 100%;
       padding: 4vw;
       max-width: 1000px;
     }
@@ -41,6 +46,12 @@
     img {
       max-width: 70%;
       display: block;
+    }
+
+    @media screen and (min-width: 1280px) {
+      body {
+        font-size: 125%;
+      }
     }
   </style>
 </head>
@@ -87,6 +98,10 @@
         <button type="submit">Submit</button>
       </form>
     </dd>
+    <dt>
+      <button>Accordion Title 4 with a very long text to test this edge case and bu sure everything is fine</button>
+    </dt>
+    <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</dd>
   </dl>
 
 <pre>
@@ -146,16 +161,23 @@ document.getElementById('enable-2').addEventListener('click', function () {
 
 <pre>
 <code class="language-js">
+// You can use your own custom properties 🤙
+
+:root {
+  --demoColor: orangered; 
+}
+
 var fisarmonica2 = new Fisarmonica({
   selector: '#custom-theme',
   theme: {
     fisarmonicaBorderColor: 'black',
-    fisarmonicaBorderColorFocus: 'orangered',
-    fisarmonicaInnerBorderColorFocus: 'orangered',
-    fisarmonicaArrowColor: 'black',
+    fisarmonicaBorderColorFocus: 'var(--demoColor)',
+    fisarmonicaInnerBorderColorFocus: 'var(--demoColor)',
+    fisarmonicaArrowColor: 'var(--demoColor)',
     fisarmonicaArrowColorFocus: 'white',
+    fisarmonicaButtonFontWeight: '700',
     fisarmonicaButtonColorFocus: 'white',
-    fisarmonicaButtonBackgroundFocus: 'orangered'
+    fisarmonicaButtonBackgroundFocus: 'var(--demoColor)'
   }
 })
 </code>
@@ -228,12 +250,13 @@ var fisarmonica3 = new Fisarmonica({
       selector: '#custom-theme',
       theme: {
         fisarmonicaBorderColor: 'black',
-        fisarmonicaBorderColorFocus: 'orangered',
-        fisarmonicaInnerBorderColorFocus: 'orangered',
-        fisarmonicaArrowColor: 'black',
+        fisarmonicaBorderColorFocus: 'var(--demoColor)',
+        fisarmonicaInnerBorderColorFocus: 'var(--demoColor)',
+        fisarmonicaArrowColor: 'var(--demoColor)',
         fisarmonicaArrowColorFocus: 'white',
+        fisarmonicaButtonFontWeight: '700',
         fisarmonicaButtonColorFocus: 'white',
-        fisarmonicaButtonBackgroundFocus: 'orangered'
+        fisarmonicaButtonBackgroundFocus: 'var(--demoColor)'
       }
     })
 

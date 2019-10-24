@@ -1,24 +1,26 @@
 .fisarmonica {
   /* Accordion css variables */
 
-  /* spacing */
+  /* Root element */
   --fisarmonicaOuterBorderWidth: 3px;
   --fisarmonicaInnerBorderWidth: 1px;
   --fisarmonicaBorderRadius: 5px;
-  --fisarmonicaArrowWidth: 3px;
   --fisarmonicaPadding: 1em;
-
-  /* Colors */
   --fisarmonicaBorderColor: Gray;
   --fisarmonicaBorderColorFocus: SteelBlue;
   --fisarmonicaInnerBorderColorFocus: Gray;
 
-  /* Arrow Colors */
+  /* Arrows */
+  --fisarmonicaArrowWidth: 0.75em;
+  --fisarmonicaArrowThickness: 3px;
   --fisarmonicaArrowColor: Gray;
   --fisarmonicaArrowColorFocus: SteelBlue;
   --fisarmonicaArrowColorDisabled: Gray;
 
-  /* Button Colors */
+  /* Buttons */
+  --fisarmonicaButtonFontFamily: inherit;
+  --fisarmonicaButtonFontSize: inherit;
+  --fisarmonicaButtonFontWeight: inherit;
   --fisarmonicaButtonColor: black;
   --fisarmonicaButtonColorFocus: black;
   --fisarmonicaButtonColorDisabled: Grey;
@@ -26,84 +28,78 @@
   --fisarmonicaButtonBackgroundFocus: AliceBlue;
   --fisarmonicaButtondBackgroundDisabled: WhiteSmoke;
 
-  /* Seection Colors */
-  --fisarmonicaSectionColor: black;
-  --fisarmonicaSectionBackground: white;
+  /* Panels */
+  --fisarmonicaPanelFontFamily: inherit;
+  --fisarmonicaPanelFontSize: inherit;
+  --fisarmonicaPanelFontWeight: inherit;
+  --fisarmonicaPanelColor: black;
+  --fisarmonicaPanelBackground: white;
 
-  /* base styles */
+  /* Base styles */
   border: var(--fisarmonicaOuterBorderWidth) solid var(--fisarmonicaBorderColor);
   border-radius: var(--fisarmonicaBorderRadius);
 }
 
-/* Button titles */
+/* Global padding */
 
-.fisarmonica > dt > button {
-  font-family: inherit;
-  font-size: inherit;
+.fisarmonica-button,
+.fisarmonica-panel {
+  padding: var(--fisarmonicaPadding);
+}
+
+/* Internal border */
+
+.fisarmonica-panel + .fisarmonica-title {
+  border-top-style: solid;
+  border-color: var(--fisarmonicaBorderColor);
+  border-top-width: var(--fisarmonicaInnerBorderWidth);
+}
+
+/* Buttons */
+
+.fisarmonica-button {
+  font-family: var(--fisarmonicaButtonFontFamily);
+  font-size: var(--fisarmonicaButtonFontSize);
+  font-weight: var(--fisarmonicaButtonFontWeight);
+  text-align: left;
   color: var(--fisarmonicaButtonColor);
   background: var(--fisarmonicaButtonBackground);
   border: none;
   outline: none;
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   width: 100%;
-  text-align: left;
 }
 
-/* Disabled titles */
-
-.fisarmonica > dt > button[disabled] {
-  color: var(--fisarmonicaButtonColorDisabled);
-  background: var(--fisarmonicaButtondBackgroundDisabled);
+.fisarmonica-button > * {
+  pointer-events: none;
 }
 
-/* Disabled titles hover state */
-
-.fisarmonica > dt > button[disabled]:hover {
-  cursor: not-allowed;
+.fisarmonica-button-text {
+  width: calc(100% - var(--fisarmonicaArrowWidth) - calc(var(--fisarmonicaPadding) * 1.5));
 }
 
 /* Arrow */
 
-.fisarmonica > dt > button::after {
+.fisarmonica-button-icon {
   content: '';
   display: block;
   border: solid var(--fisarmonicaArrowColor);
-  border-width: 0 var(--fisarmonicaArrowWidth) var(--fisarmonicaArrowWidth) 0;
-  width: 0.75em;
-  height: 0.75em;
-  transform: translate(-0.25em, -0.15em) rotate(45deg);
+  border-width: 0 var(--fisarmonicaArrowThickness) var(--fisarmonicaArrowThickness) 0;
+  width: var(--fisarmonicaArrowWidth);
+  height: var(--fisarmonicaArrowWidth);
+  transform: translate(-25%, -25%) rotate(45deg);
 }
 
-/* Global padding */
+/* Panels */
 
-.fisarmonica > dt > button,
-.fisarmonica > dd {
-  padding: var(--fisarmonicaPadding);
-}
-
-/* Internal border */
-
-.fisarmonica > dd + dt {
-  border-top-style: solid;
-  border-color: var(--fisarmonicaBorderColor);
-  border-top-width: var(--fisarmonicaInnerBorderWidth);
-}
-
-.fisarmonica > dt > button[aria-expanded="true"] {
-  border-bottom-style: solid;
-  border-bottom-width: var(--fisarmonicaInnerBorderWidth);
-}
-
-.fisarmonica > dt > button[aria-expanded="true"]:focus {
-  border-color: var(--fisarmonicaInnerBorderColorFocus);
-}
-
-/* Seections */
-
-.fisarmonica > dd {
-  color: var(--fisarmonicaSectionColor);
-  background: var(--fisarmonicaSectionBackground);
+.fisarmonica-panel {
+  font-family: var(--fisarmonicaPanelFontFamily);
+  font-size: var(--fisarmonicaPanelFontSize);
+  font-weight: var(--fisarmonicaPanelFontWeight);
+  color: var(--fisarmonicaPanelColor);
+  background: var(--fisarmonicaPanelBackground);
   margin: 0;
   height: auto;
   transform: scaleY(1);
@@ -117,11 +113,24 @@
   border-color: var(--fisarmonicaBorderColorFocus);
 }
 
-.fisarmonica.js-focus > dd + dt {
+.fisarmonica.js-focus .fisarmonica-panel + .fisarmonica-title {
   border-color: var(--fisarmonicaInnerBorderColorFocus);
 }
 
-.fisarmonica > dd.js-is-hidden {
+.fisarmonica-button[disabled]:hover {
+  cursor: not-allowed;
+}
+
+.fisarmonica-button[aria-expanded="true"] {
+  border-bottom-style: solid;
+  border-bottom-width: var(--fisarmonicaInnerBorderWidth);
+}
+
+.fisarmonica-button[aria-expanded="true"]:focus {
+  border-color: var(--fisarmonicaInnerBorderColorFocus);
+}
+
+.fisarmonica-panel.js-is-hidden {
   transform: scaleY(0);
   height: 0;
   padding: 0;
@@ -129,19 +138,19 @@
   overflow: hidden;
 }
 
-.fisarmonica > dt > button:focus {
+.fisarmonica-button:focus {
   color: var(--fisarmonicaButtonColorFocus);
   background: var(--fisarmonicaButtonBackgroundFocus);
 }
 
-.fisarmonica > dt > button:focus::after {
+.fisarmonica-button:focus .fisarmonica-button-icon {
   border-color: var(--fisarmonicaArrowColorFocus);
 }
 
-.fisarmonica > dt > button[disabled]::after {
+.fisarmonica-button[disabled] .fisarmonica-button-icon {
   border-color: var(--fisarmonicaArrowColorDisabled);
 }
 
-.fisarmonica > dt > button[aria-expanded="true"]::after {
-  transform: translate(-0.25em, 0.15em) rotate(-135deg);
+.fisarmonica-button[aria-expanded="true"] .fisarmonica-button-icon {
+  transform: translate(-25%, 25%) rotate(-135deg);
 }
