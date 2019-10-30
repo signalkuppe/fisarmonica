@@ -23,8 +23,8 @@ Include css and js files
 Be sure to use the latest version
 
 ```html
-<link rel="stylesheet" media="screen" href="https://cdn.jsdelivr.net/npm/fisarmonica@1.3.1/dist/fisarmonica.min.css" />
-<script src="https://cdn.jsdelivr.net/npm/fisarmonica@1.3.1/dist/fisarmonica.min.js" ></script>
+<link rel="stylesheet" media="screen" href="https://cdn.jsdelivr.net/npm/fisarmonica@1.3.2/dist/fisarmonica.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/fisarmonica@1.3.2/dist/fisarmonica.min.js" ></script>
 ```
 
 Prepare the base markup
@@ -104,7 +104,10 @@ Default value:
   fisarmonicaPanelFontSize: 'inherit',
   fisarmonicaPanelFontWeight: 'inherit',
   fisarmonicaPanelColor: 'black',
-  fisarmonicaPanelBackground: 'white'
+  fisarmonicaPanelBackground: 'white',
+  fisarmonicaPanelTransitionOrigin: 'top',
+  fisarmonicaPanelTransitionDuration: '0.15s',
+  fisarmonicaPanelTransitionTimingFunction: 'linear'
 }
 ```
 

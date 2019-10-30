@@ -79,17 +79,15 @@ var Fisarmonica = function (options) { // eslint-disable-line no-unused-vars, pa
   //
 
   /**
-   * Creates an unique alfanumeric id
+   * Creates an unique id
    */
 
   function _makeId () {
-    var result = ''
-    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
-    var charactersLength = characters.length
-    for (var i = 0; i < 8; i++) {
-      result += characters.charAt(Math.floor(Math.random() * charactersLength))
-    }
-    return result
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+      var r = Math.random() * 16 | 0
+      var v = c === 'x' ? r : (r & 0x3 | 0x8)
+      return v.toString(16)
+    })
   }
 
   /**
@@ -180,6 +178,9 @@ var Fisarmonica = function (options) { // eslint-disable-line no-unused-vars, pa
     accordionRootElement.classList.add(classes.cssMainClass) // for styling purpose
     var accordionId = _makeId()
     var accordionId2 = _makeId()
+    titles = Array.from(accordionRootElement.querySelectorAll('dt'))
+    buttons = Array.from(accordionRootElement.querySelectorAll('dt > button'))
+    panels = Array.from(accordionRootElement.querySelectorAll('dd'))
     titles
       .forEach(function (title) {
         title.classList.add(classes.cssMainClass + '-title')
@@ -188,14 +189,14 @@ var Fisarmonica = function (options) { // eslint-disable-line no-unused-vars, pa
       .forEach(function (button, idb) {
         button.classList.add(classes.cssMainClass + '-button')
         button.innerHTML = '<span class="' + classes.cssMainClass + '-button-text">' + button.innerHTML + '</span><span aria-hidden="true" class="' + classes.cssMainClass + '-button-icon"></span>'
-        button.setAttribute('aria-controls', 'fisarmonica-panel-' + accordionId + '-' + idb)
-        button.setAttribute('id', 'fisarmonica-panel-' + accordionId2 + '-' + idb)
+        button.setAttribute('aria-controls', classes.cssMainClass + '-' + accordionId + '-' + idb)
+        button.setAttribute('id', classes.cssMainClass + '-' + accordionId2 + '-' + idb)
       })
     panels
       .forEach(function (panel, idc) {
         panel.classList.add(classes.cssMainClass + '-panel')
-        panel.setAttribute('id', 'fisarmonica-panel-' + accordionId + '-' + idc)
-        panel.setAttribute('aria-labelledby', 'fisarmonica-panel-' + accordionId2 + '-' + idc)
+        panel.setAttribute('id', classes.cssMainClass + '-' + accordionId + '-' + idc)
+        panel.setAttribute('aria-labelledby', classes.cssMainClass + '-' + accordionId2 + '-' + idc)
       })
   }
 
@@ -277,14 +278,11 @@ var Fisarmonica = function (options) { // eslint-disable-line no-unused-vars, pa
       console.warn('Cannot find an fisarmonica with class' + mergedOptions.selector)
       return
     }
-    titles = Array.from(accordionRootElement.querySelectorAll('dt'))
-    buttons = Array.from(accordionRootElement.querySelectorAll('dt > button'))
-    panels = Array.from(accordionRootElement.querySelectorAll('dd'))
-    fisarmonica.close()
     _prepareMarkup()
     _changeStyles()
     _setFocusWatcher()
     _keyboardEvents()
+    fisarmonica.close()
     accordionRootElement.addEventListener('click', _rootClickHandler, false)
   }
 

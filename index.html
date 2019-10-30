@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <title>Fisarmonica | Demo</title>
@@ -14,7 +14,7 @@
   <style>
 
     :root {
-      --demoColor: orangered; 
+      --demoColor: Crimson; 
     }
 
     body {
@@ -99,7 +99,7 @@
       </form>
     </dd>
     <dt>
-      <button>Accordion Title 4 with a very long text to test this edge case and bu sure everything is fine</button>
+      <button>Accordion Title 4 with a very long text to test this edge case and be sure everything is fine</button>
     </dt>
     <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</dd>
   </dl>
@@ -164,20 +164,21 @@ document.getElementById('enable-2').addEventListener('click', function () {
 // You can use your own custom properties 🤙
 
 :root {
-  --demoColor: orangered; 
+  --demoColor: Crimson; 
 }
 
 var fisarmonica2 = new Fisarmonica({
   selector: '#custom-theme',
   theme: {
-    fisarmonicaBorderColor: 'black',
+    fisarmonicaBorderColor: 'var(--demoColor)',
     fisarmonicaBorderColorFocus: 'var(--demoColor)',
     fisarmonicaInnerBorderColorFocus: 'var(--demoColor)',
     fisarmonicaArrowColor: 'var(--demoColor)',
     fisarmonicaArrowColorFocus: 'white',
     fisarmonicaButtonFontWeight: '700',
     fisarmonicaButtonColorFocus: 'white',
-    fisarmonicaButtonBackgroundFocus: 'var(--demoColor)'
+    fisarmonicaButtonBackgroundFocus: 'var(--demoColor)',
+    fisarmonicaPanelTransitionTimingFunction: 'ease-in-out'
   }
 })
 </code>
@@ -249,14 +250,15 @@ var fisarmonica3 = new Fisarmonica({
     var fisarmonica2 = new Fisarmonica({
       selector: '#custom-theme',
       theme: {
-        fisarmonicaBorderColor: 'black',
+        fisarmonicaBorderColor: 'var(--demoColor)',
         fisarmonicaBorderColorFocus: 'var(--demoColor)',
         fisarmonicaInnerBorderColorFocus: 'var(--demoColor)',
         fisarmonicaArrowColor: 'var(--demoColor)',
         fisarmonicaArrowColorFocus: 'white',
         fisarmonicaButtonFontWeight: '700',
+        fisarmonicaButtonColor: 'var(--demoColor)',
         fisarmonicaButtonColorFocus: 'white',
-        fisarmonicaButtonBackgroundFocus: 'var(--demoColor)'
+        fisarmonicaButtonBackgroundFocus: 'var(--demoColor)',
       }
     })
 

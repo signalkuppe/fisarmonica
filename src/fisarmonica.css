@@ -34,6 +34,9 @@
   --fisarmonicaPanelFontWeight: inherit;
   --fisarmonicaPanelColor: black;
   --fisarmonicaPanelBackground: white;
+  --fisarmonicaPanelTransitionOrigin: top;
+  --fisarmonicaPanelTransitionDuration: 0.15s;
+  --fisarmonicaPanelTransitionTimingFunction: linear;
 
   /* Base styles */
   border: var(--fisarmonicaOuterBorderWidth) solid var(--fisarmonicaBorderColor);
@@ -103,8 +106,8 @@
   margin: 0;
   height: auto;
   transform: scaleY(1);
-  transform-origin: bottom;
-  transition: transform 0.15s linear;
+  transform-origin: var(--fisarmonicaPanelTransitionOrigin);
+  transition: transform var(--fisarmonicaPanelTransitionDuration) var(--fisarmonicaPanelTransitionTimingFunction);
 }
 
 /* states */
