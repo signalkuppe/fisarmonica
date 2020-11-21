@@ -1,110 +1,143 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Fisarmonica | Demo</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/themes/prism.css">
-  <link rel="stylesheet" href="./src/fisarmonica.css" />
-  <script src="./src/fisarmonica.js" ></script>
-  <!-- demo styles -->
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700&display=swap" rel="stylesheet">
-  <style>
+    <head>
+        <meta charset="utf-8" />
+        <title>Fisarmonica | Demo</title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/themes/prism.css"
+        />
+        <link rel="stylesheet" href="./src/fisarmonica.css" />
+        <script src="./src/fisarmonica.js"></script>
+        <!-- demo styles -->
+        <link
+            href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            :root {
+                --demoColor: Crimson;
+            }
 
-    :root {
-      --demoColor: Crimson; 
-    }
+            body {
+                font-family: 'Roboto', sans-serif;
+                font-size: 100%;
+                padding: 4vw;
+                max-width: 1000px;
+            }
 
-    body {
-      font-family: 'Roboto', sans-serif;
-      font-size: 100%;
-      padding: 4vw;
-      max-width: 1000px;
-    }
+            h1 {
+                margin-bottom: 0;
+            }
 
-    h1 {
-      margin-bottom: 0;
-    }
+            header {
+                margin-bottom: 4em;
+            }
 
-    header {
-      margin-bottom: 4em;
-    }
+            code {
+                font-size: 75% !important;
+            }
 
-    code {
-      font-size: 75%!important;
-    }
+            label {
+                font-weight: 700;
+                font-size: 85%;
+                display: block;
+                margin-bottom: 0.25em;
+            }
 
-    label {
-      font-weight: 700;
-      font-size: 85%;
-      display: block;
-      margin-bottom: 0.25em;
-    }
+            img {
+                max-width: 70%;
+                display: block;
+            }
 
-    img {
-      max-width: 70%;
-      display: block;
-    }
+            @media screen and (min-width: 1280px) {
+                body {
+                    font-size: 125%;
+                }
+            }
+        </style>
+    </head>
 
-    @media screen and (min-width: 1280px) {
-      body {
-        font-size: 125%;
-      }
-    }
-  </style>
-</head>
+    <body>
+        <header>
+            <h1>Fisarmonica.js demo</h1>
+            <a href="https://github.com/signalkuppe/fisarmonica"
+                >https://github.com/signalkuppe/fisarmonica</a
+            >
+        </header>
 
-<body>
-  
-  <header>
-    <h1>Fisarmonica.js demo</h1>
-    <a href="https://github.com/signalkuppe/fisarmonica">https://github.com/signalkuppe/fisarmonica</a>
-  </header>
+        <main>
+            <h2>Basic example with API</h2>
+            <button id="close">Close all</button>
+            <button id="close-2">Close 2</button>
+            <button id="open">Open all</button>
+            <button id="open-2">Open 2</button>
+            <button id="disable">Disable all</button>
+            <button id="disable-2">Disable 2</button>
+            <button id="enable">Enable all</button>
+            <button id="enable-2">Enable 2</button>
+            <dl data-fisarmonica>
+                <dt>
+                    <button>Accordion Title 1</button>
+                </dt>
+                <dd>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </dd>
+                <dt>
+                    <button>Accordion Title 2 with images</button>
+                </dt>
+                <dd>
+                    <h3>Descending the Tossenhorn ridge</h3>
+                    <a
+                        href="https://www.signalkuppe.com/alpinismo/2019/10/07/tossenhorn"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        <img
+                            src="https://images.ctfassets.net/rotmy72mdop6/0tEAUAJwe3obUm5L1KuEb/30af751ebecfacfbd78788cb74a2999f/alpinismo-tossenhorn-rientro-colle.jpg?fit=thumb&w=1200&fm=jpg&fl=progressive"
+                            alt="Tossenhorn ridge"
+                        />
+                    </a>
+                    <p><small>Great view on the Weissmies massif</small></p>
+                </dd>
+                <dt>
+                    <button>Accordion Title 3 with inputs</button>
+                </dt>
+                <dd>
+                    <form action="/">
+                        <label for="demo-input-1">Demo input</label>
+                        <input
+                            type="text"
+                            placeholder="Type something..."
+                            id="demo-input-1"
+                        />
+                        <button type="submit">Submit</button>
+                    </form>
+                </dd>
+                <dt>
+                    <button>
+                        Accordion Title 4 with a very long text to test this
+                        edge case and be sure everything is fine
+                    </button>
+                </dt>
+                <dd>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </dd>
+            </dl>
 
-  <main>
-  <h2>Basic example with API</h2>
-  <button id="close">Close all</button>
-  <button id="close-2">Close 2</button>
-  <button id="open">Open all</button>
-  <button id="open-2">Open 2</button>
-  <button id="disable">Disable all</button>
-  <button id="disable-2">Disable 2</button>
-  <button id="enable">Enable all</button>
-  <button id="enable-2">Enable 2</button>        
-  <dl data-fisarmonica>
-    <dt>
-      <button>Accordion Title 1</button>
-    </dt>
-    <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</dd>
-    <dt>
-      <button>Accordion Title 2 with images</button>
-    </dt>
-    <dd>
-      <h3>Descending the Tossenhorn ridge</h3>
-      <a href="https://www.signalkuppe.com/alpinismo/2019/10/07/tossenhorn" target="_blank" rel="noopener">
-        <img src="https://images.ctfassets.net/rotmy72mdop6/0tEAUAJwe3obUm5L1KuEb/30af751ebecfacfbd78788cb74a2999f/alpinismo-tossenhorn-rientro-colle.jpg?fit=thumb&w=1200&fm=jpg&fl=progressive" alt="Tossenhorn ridge" />
-      </a>
-      <p><small>Great view on the Weissmies massif</small></p>
-    </dd>
-    <dt>
-      <button>Accordion Title 3 with inputs</button>
-    </dt>
-    <dd>
-      <form action="/">
-        <label for="demo-input-1">Demo input</label>
-        <input type="text" placeholder="Type something..." id="demo-input-1" />
-        <button type="submit">Submit</button>
-      </form>
-    </dd>
-    <dt>
-      <button>Accordion Title 4 with a very long text to test this edge case and be sure everything is fine</button>
-    </dt>
-    <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</dd>
-  </dl>
-
-<pre>
+            <pre>
 <code class="language-js">
 var fisarmonica = new Fisarmonica()
 
@@ -142,24 +175,39 @@ document.getElementById('enable-2').addEventListener('click', function () {
 </code>
 </pre>
 
-  <h2>Custom theme</h2>
+            <h2>Custom theme</h2>
 
-  <dl id="custom-theme">
-    <dt>
-      <button>Accordion Title 1</button>
-    </dt>
-    <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</dd>
-    <dt>
-      <button>Accordion Title 2</button>
-    </dt>
-    <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</dd>
-    <dt>
-      <button>Accordion Title 3</button>
-    </dt>
-    <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</dd>
-  </dl>
+            <dl id="custom-theme">
+                <dt>
+                    <button>Accordion Title 1</button>
+                </dt>
+                <dd>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </dd>
+                <dt>
+                    <button>Accordion Title 2</button>
+                </dt>
+                <dd>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </dd>
+                <dt>
+                    <button>Accordion Title 3</button>
+                </dt>
+                <dd>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </dd>
+            </dl>
 
-<pre>
+            <pre>
 <code class="language-js">
 // You can use your own custom properties 🤙
 
@@ -184,24 +232,39 @@ var fisarmonica2 = new Fisarmonica({
 </code>
 </pre>
 
-  <h2>Keep all the panels open</h2>
+            <h2>Keep all the panels open</h2>
 
-  <dl id="keep-open">
-    <dt>
-      <button>Accordion Title 1</button>
-    </dt>
-    <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</dd>
-    <dt>
-      <button>Accordion Title 2</button>
-    </dt>
-    <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</dd>
-    <dt>
-      <button>Accordion Title 3</button>
-    </dt>
-    <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</dd>
-  </dl>
+            <dl id="keep-open">
+                <dt>
+                    <button>Accordion Title 1</button>
+                </dt>
+                <dd>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </dd>
+                <dt>
+                    <button>Accordion Title 2</button>
+                </dt>
+                <dd>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </dd>
+                <dt>
+                    <button>Accordion Title 3</button>
+                </dt>
+                <dd>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </dd>
+            </dl>
 
-<pre>
+            <pre>
 <code class="language-js">
 var fisarmonica3 = new Fisarmonica({
   selector: '#keep-open',
@@ -209,64 +272,79 @@ var fisarmonica3 = new Fisarmonica({
 })
 </code>
 </pre>
-  </main>
-  <!-- demo scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/prism.min.js"></script>
-  <script>
-    var fisarmonica = new Fisarmonica()
+        </main>
+        <!-- demo scripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/prism.min.js"></script>
+        <script>
+            var fisarmonica = new Fisarmonica();
 
-    document.getElementById('close').addEventListener('click', function () {
-      fisarmonica.close()
-    })
+            document
+                .getElementById('close')
+                .addEventListener('click', function () {
+                    fisarmonica.close();
+                });
 
-    document.getElementById('close-2').addEventListener('click', function () {
-      fisarmonica.close([1])
-    })
+            document
+                .getElementById('close-2')
+                .addEventListener('click', function () {
+                    fisarmonica.close([1]);
+                });
 
-    document.getElementById('open').addEventListener('click', function () {
-      fisarmonica.open()
-    })
+            document
+                .getElementById('open')
+                .addEventListener('click', function () {
+                    fisarmonica.open();
+                });
 
-    document.getElementById('open-2').addEventListener('click', function () {
-      fisarmonica.open([1])
-    })
+            document
+                .getElementById('open-2')
+                .addEventListener('click', function () {
+                    fisarmonica.open([1]);
+                });
 
-    document.getElementById('disable').addEventListener('click', function () {
-      fisarmonica.disable()
-    })
+            document
+                .getElementById('disable')
+                .addEventListener('click', function () {
+                    fisarmonica.disable();
+                });
 
-    document.getElementById('disable-2').addEventListener('click', function () {
-      fisarmonica.disable([1])
-    })
+            document
+                .getElementById('disable-2')
+                .addEventListener('click', function () {
+                    fisarmonica.disable([1]);
+                });
 
-    document.getElementById('enable').addEventListener('click', function () {
-      fisarmonica.enable()
-    })
+            document
+                .getElementById('enable')
+                .addEventListener('click', function () {
+                    fisarmonica.enable();
+                });
 
-    document.getElementById('enable-2').addEventListener('click', function () {
-      fisarmonica.enable([1])
-    })
+            document
+                .getElementById('enable-2')
+                .addEventListener('click', function () {
+                    fisarmonica.enable([1]);
+                });
 
-    var fisarmonica2 = new Fisarmonica({
-      selector: '#custom-theme',
-      theme: {
-        fisarmonicaBorderColor: 'var(--demoColor)',
-        fisarmonicaBorderColorFocus: 'var(--demoColor)',
-        fisarmonicaInnerBorderColorFocus: 'var(--demoColor)',
-        fisarmonicaArrowColor: 'var(--demoColor)',
-        fisarmonicaArrowColorFocus: 'white',
-        fisarmonicaButtonFontWeight: '700',
-        fisarmonicaButtonColor: 'var(--demoColor)',
-        fisarmonicaButtonColorFocus: 'white',
-        fisarmonicaButtonBackgroundFocus: 'var(--demoColor)',
-      }
-    })
+            var fisarmonica2 = new Fisarmonica({
+                selector: '#custom-theme',
+                theme: {
+                    fisarmonicaBorderColor: 'var(--demoColor)',
+                    fisarmonicaBorderColorFocus: 'var(--demoColor)',
+                    fisarmonicaInnerBorderColorFocus: 'var(--demoColor)',
+                    fisarmonicaArrowColor: 'var(--demoColor)',
+                    fisarmonicaArrowColorFocus: 'white',
+                    fisarmonicaButtonFontWeight: '700',
+                    fisarmonicaButtonColor: 'var(--demoColor)',
+                    fisarmonicaButtonColorFocus: 'white',
+                    fisarmonicaButtonBackgroundFocus: 'var(--demoColor)',
+                },
+            });
 
-    var fisarmonica3 = new Fisarmonica({
-      selector: '#keep-open',
-      keepPanelsOpen: true
-    })
-
-  </script>
-</body>
+            var fisarmonica3 = new Fisarmonica({
+                selector: '#keep-open',
+                keepPanelsOpen: true,
+            });
+        </script>
+    </body>
 </html>

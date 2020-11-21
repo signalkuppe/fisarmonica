@@ -1,163 +1,169 @@
 .fisarmonica {
-  /* Accordion css variables */
+    /* Accordion css variables */
 
-  /* Root element */
-  --fisarmonicaOuterBorderWidth: 3px;
-  --fisarmonicaInnerBorderWidth: 1px;
-  --fisarmonicaBorderRadius: 5px;
-  --fisarmonicaPadding: 1em;
-  --fisarmonicaBorderColor: Gray;
-  --fisarmonicaBorderColorFocus: SteelBlue;
-  --fisarmonicaInnerBorderColorFocus: Gray;
+    /* Root element */
+    --fisarmonicaOuterBorderWidth: 3px;
+    --fisarmonicaInnerBorderWidth: 1px;
+    --fisarmonicaBorderRadius: 5px;
+    --fisarmonicaPadding: 1em;
+    --fisarmonicaBorderColor: Gray;
+    --fisarmonicaBorderColorFocus: SteelBlue;
+    --fisarmonicaInnerBorderColorFocus: Gray;
 
-  /* Arrows */
-  --fisarmonicaArrowWidth: 0.75em;
-  --fisarmonicaArrowThickness: 3px;
-  --fisarmonicaArrowColor: Gray;
-  --fisarmonicaArrowColorFocus: SteelBlue;
-  --fisarmonicaArrowColorDisabled: Gray;
+    /* Arrows */
+    --fisarmonicaArrowWidth: 0.75em;
+    --fisarmonicaArrowThickness: 3px;
+    --fisarmonicaArrowColor: Gray;
+    --fisarmonicaArrowColorFocus: SteelBlue;
+    --fisarmonicaArrowColorDisabled: Gray;
 
-  /* Buttons */
-  --fisarmonicaButtonFontFamily: inherit;
-  --fisarmonicaButtonFontSize: inherit;
-  --fisarmonicaButtonFontWeight: inherit;
-  --fisarmonicaButtonColor: black;
-  --fisarmonicaButtonColorFocus: black;
-  --fisarmonicaButtonColorDisabled: Grey;
-  --fisarmonicaButtonBackground: white;
-  --fisarmonicaButtonBackgroundFocus: AliceBlue;
-  --fisarmonicaButtonBackgroundDisabled: whitesmoke;
+    /* Buttons */
+    --fisarmonicaButtonFontFamily: inherit;
+    --fisarmonicaButtonFontSize: inherit;
+    --fisarmonicaButtonFontWeight: inherit;
+    --fisarmonicaButtonColor: black;
+    --fisarmonicaButtonColorFocus: black;
+    --fisarmonicaButtonColorDisabled: Grey;
+    --fisarmonicaButtonBackground: white;
+    --fisarmonicaButtonBackgroundFocus: AliceBlue;
+    --fisarmonicaButtonBackgroundDisabled: whitesmoke;
 
-  /* Panels */
-  --fisarmonicaPanelFontFamily: inherit;
-  --fisarmonicaPanelFontSize: inherit;
-  --fisarmonicaPanelFontWeight: inherit;
-  --fisarmonicaPanelColor: black;
-  --fisarmonicaPanelBackground: white;
-  --fisarmonicaPanelTransitionOrigin: top;
-  --fisarmonicaPanelTransitionDuration: 0.15s;
-  --fisarmonicaPanelTransitionTimingFunction: linear;
+    /* Panels */
+    --fisarmonicaPanelFontFamily: inherit;
+    --fisarmonicaPanelFontSize: inherit;
+    --fisarmonicaPanelFontWeight: inherit;
+    --fisarmonicaPanelColor: black;
+    --fisarmonicaPanelBackground: white;
+    --fisarmonicaPanelTransitionOrigin: top;
+    --fisarmonicaPanelTransitionDuration: 0.15s;
+    --fisarmonicaPanelTransitionTimingFunction: linear;
 
-  /* Base styles */
-  border: var(--fisarmonicaOuterBorderWidth) solid var(--fisarmonicaBorderColor);
-  border-radius: var(--fisarmonicaBorderRadius);
+    /* Base styles */
+    border: var(--fisarmonicaOuterBorderWidth) solid
+        var(--fisarmonicaBorderColor);
+    border-radius: var(--fisarmonicaBorderRadius);
 }
 
 /* Global padding */
 
 .fisarmonica-button,
 .fisarmonica-panel {
-  padding: var(--fisarmonicaPadding);
+    padding: var(--fisarmonicaPadding);
 }
 
 /* Internal border */
 
 .fisarmonica-panel + .fisarmonica-title {
-  border-top-style: solid;
-  border-color: var(--fisarmonicaBorderColor);
-  border-top-width: var(--fisarmonicaInnerBorderWidth);
+    border-top-style: solid;
+    border-color: var(--fisarmonicaBorderColor);
+    border-top-width: var(--fisarmonicaInnerBorderWidth);
 }
 
 /* Buttons */
 
 .fisarmonica-button {
-  font-family: var(--fisarmonicaButtonFontFamily);
-  font-size: var(--fisarmonicaButtonFontSize);
-  font-weight: var(--fisarmonicaButtonFontWeight);
-  text-align: left;
-  color: var(--fisarmonicaButtonColor);
-  background: var(--fisarmonicaButtonBackground);
-  border: none;
-  outline: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 100%;
+    font-family: var(--fisarmonicaButtonFontFamily);
+    font-size: var(--fisarmonicaButtonFontSize);
+    font-weight: var(--fisarmonicaButtonFontWeight);
+    text-align: left;
+    color: var(--fisarmonicaButtonColor);
+    background: var(--fisarmonicaButtonBackground);
+    border: none;
+    outline: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
 }
 
 .fisarmonica-button > * {
-  pointer-events: none;
+    pointer-events: none;
 }
 
 .fisarmonica-button-text {
-  width: calc(100% - var(--fisarmonicaArrowWidth) - calc(var(--fisarmonicaPadding) * 1.5));
+    width: calc(
+        100% - var(--fisarmonicaArrowWidth) -
+            calc(var(--fisarmonicaPadding) * 1.5)
+    );
 }
 
 /* Arrow */
 
 .fisarmonica-button-icon {
-  content: '';
-  display: block;
-  border: solid var(--fisarmonicaArrowColor);
-  border-width: 0 var(--fisarmonicaArrowThickness) var(--fisarmonicaArrowThickness) 0;
-  width: var(--fisarmonicaArrowWidth);
-  height: var(--fisarmonicaArrowWidth);
-  transform: translate(-25%, -25%) rotate(45deg);
+    content: '';
+    display: block;
+    border: solid var(--fisarmonicaArrowColor);
+    border-width: 0 var(--fisarmonicaArrowThickness)
+        var(--fisarmonicaArrowThickness) 0;
+    width: var(--fisarmonicaArrowWidth);
+    height: var(--fisarmonicaArrowWidth);
+    transform: translate(-25%, -25%) rotate(45deg);
 }
 
 /* Panels */
 
 .fisarmonica-panel {
-  font-family: var(--fisarmonicaPanelFontFamily);
-  font-size: var(--fisarmonicaPanelFontSize);
-  font-weight: var(--fisarmonicaPanelFontWeight);
-  color: var(--fisarmonicaPanelColor);
-  background: var(--fisarmonicaPanelBackground);
-  margin: 0;
-  height: auto;
-  transform: scaleY(1);
-  transform-origin: var(--fisarmonicaPanelTransitionOrigin);
-  transition: transform var(--fisarmonicaPanelTransitionDuration) var(--fisarmonicaPanelTransitionTimingFunction);
+    font-family: var(--fisarmonicaPanelFontFamily);
+    font-size: var(--fisarmonicaPanelFontSize);
+    font-weight: var(--fisarmonicaPanelFontWeight);
+    color: var(--fisarmonicaPanelColor);
+    background: var(--fisarmonicaPanelBackground);
+    margin: 0;
+    height: auto;
+    transform: scaleY(1);
+    transform-origin: var(--fisarmonicaPanelTransitionOrigin);
+    transition: transform var(--fisarmonicaPanelTransitionDuration)
+        var(--fisarmonicaPanelTransitionTimingFunction);
 }
 
 /* states */
 
 .fisarmonica.js-focus {
-  border-color: var(--fisarmonicaBorderColorFocus);
+    border-color: var(--fisarmonicaBorderColorFocus);
 }
 
 .fisarmonica.js-focus .fisarmonica-panel + .fisarmonica-title {
-  border-color: var(--fisarmonicaInnerBorderColorFocus);
+    border-color: var(--fisarmonicaInnerBorderColorFocus);
 }
 
 .fisarmonica-button[disabled] {
-  background: var(--fisarmonicaButtonBackgroundDisabled);
+    background: var(--fisarmonicaButtonBackgroundDisabled);
 }
 
 .fisarmonica-button[disabled]:hover {
-  cursor: not-allowed;
+    cursor: not-allowed;
 }
 
-.fisarmonica-button[aria-expanded="true"] {
-  border-bottom-style: solid;
-  border-bottom-width: var(--fisarmonicaInnerBorderWidth);
+.fisarmonica-button[aria-expanded='true'] {
+    border-bottom-style: solid;
+    border-bottom-width: var(--fisarmonicaInnerBorderWidth);
 }
 
-.fisarmonica-button[aria-expanded="true"]:focus {
-  border-color: var(--fisarmonicaInnerBorderColorFocus);
+.fisarmonica-button[aria-expanded='true']:focus {
+    border-color: var(--fisarmonicaInnerBorderColorFocus);
 }
 
 .fisarmonica-panel.js-is-hidden {
-  transform: scaleY(0);
-  height: 0;
-  padding: 0;
-  border: none;
-  overflow: hidden;
+    transform: scaleY(0);
+    height: 0;
+    padding: 0;
+    border: none;
+    overflow: hidden;
 }
 
 .fisarmonica-button:focus {
-  color: var(--fisarmonicaButtonColorFocus);
-  background: var(--fisarmonicaButtonBackgroundFocus);
+    color: var(--fisarmonicaButtonColorFocus);
+    background: var(--fisarmonicaButtonBackgroundFocus);
 }
 
 .fisarmonica-button:focus .fisarmonica-button-icon {
-  border-color: var(--fisarmonicaArrowColorFocus);
+    border-color: var(--fisarmonicaArrowColorFocus);
 }
 
 .fisarmonica-button[disabled] .fisarmonica-button-icon {
-  border-color: var(--fisarmonicaArrowColorDisabled);
+    border-color: var(--fisarmonicaArrowColorDisabled);
 }
 
-.fisarmonica-button[aria-expanded="true"] .fisarmonica-button-icon {
-  transform: translate(-25%, 25%) rotate(-135deg);
+.fisarmonica-button[aria-expanded='true'] .fisarmonica-button-icon {
+    transform: translate(-25%, 25%) rotate(-135deg);
 }

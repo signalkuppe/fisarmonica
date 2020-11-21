@@ -1,40 +1,33 @@
 {
-  "name": "fisarmonica",
-  "version": "1.3.3",
-  "description": "A simple vanilla js accordion plugin",
-  "main": "src/fisarmonica.js",
-  "scripts": {
-    "bundle": "node bundle",
-    "dev": "http-server ./",
-    "release": "release-it"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/signalkuppe/fisarmonica.git"
-  },
-  "keywords": [
-    "vanilla",
-    "js",
-    "fisarmonica"
-  ],
-  "author": "Matteo Leoni",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/signalkuppe/fisarmonica/issues"
-  },
-  "homepage": "https://github.com/signalkuppe/fisarmonica#readme",
-  "devDependencies": {
-    "clean-css": "^4.2.1",
-    "eslint": "^6.5.1",
-    "eslint-config-standard": "^14.1.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-node": "^10.0.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1",
-    "http-server": "^0.11.1",
-    "release-it": "^12.4.3",
-    "stylelint": "^11.1.1",
-    "stylelint-config-standard": "^19.0.0",
-    "uglify-js": "^3.6.2"
-  }
+    "name": "fisarmonica",
+    "version": "1.3.3",
+    "description": "A simple vanilla js accordion plugin",
+    "main": "src/fisarmonica.js",
+    "scripts": {
+        "bundle": "node bundle",
+        "dev": "http-server ./",
+        "release": "release-it"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/signalkuppe/fisarmonica.git"
+    },
+    "keywords": [
+        "vanilla",
+        "js",
+        "fisarmonica"
+    ],
+    "author": "Matteo Leoni",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/signalkuppe/fisarmonica/issues"
+    },
+    "homepage": "https://github.com/signalkuppe/fisarmonica#readme",
+    "devDependencies": {
+        "clean-css": "^4.2.1",
+        "http-server": "^0.12.3",
+        "prettier": "2.2.0",
+        "release-it": "^14.2.1",
+        "uglify-es": "^3.3.9"
+    }
 }
