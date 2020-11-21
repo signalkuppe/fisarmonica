@@ -27,9 +27,9 @@ Be sure to use the latest version
 <link
     rel="stylesheet"
     media="screen"
-    href="https://cdn.jsdelivr.net/npm/fisarmonica@1.3.4/dist/fisarmonica.min.css"
+    href="https://cdn.jsdelivr.net/npm/fisarmonica@1.3.5/dist/fisarmonica.min.css"
 />
-<script src="https://cdn.jsdelivr.net/npm/fisarmonica@1.3.4/dist/fisarmonica.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fisarmonica@1.3.5/dist/fisarmonica.min.js"></script>
 ```
 
 Prepare the base markup
